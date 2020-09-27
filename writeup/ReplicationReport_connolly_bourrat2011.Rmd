@@ -40,9 +40,9 @@ I anticipate that cleaning and tidying data from 91 participants will prove chal
 
 ##Related Links 
 
-The GitHub repository for this replication project can be found INSERT LINK
+The GitHub repository for this replication project can be found [here.] (https://github.com/psych251/bourrat2011)
 
-The original paper and subject of the replication project can be found INSERT LINK
+The original paper and subject of the replication project can be found [here.] (https://github.com/psych251/bourrat2011/blob/master/original_paper/bourrat2011.pdf)
 
 ##Methods
 
