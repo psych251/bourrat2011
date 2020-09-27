@@ -1,0 +1,123 @@
+---
+title: "Replication of "Surveillance Cues Enhance Moral Condemnation" by Bourrat, Baumard, & McKay (2011, Evolutionary Psychology)"
+author: "Catie Connolly (catiec@stanford.edu)"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+output:
+  html_document:
+    toc: yes
+    toc_depth: 3
+    toc_float:
+      collapsed: false
+---
+
+<!-- Replication reports should all use this template to standardize reporting across projects.  These reports will be public supplementary materials that accompany the summary report(s) of the aggregate results. -->
+
+##Introduction
+
+[No abstract is needed.]  Each replication project will have a straightforward, no frills report of the study and results.  These reports will be publicly available as supplementary material for the aggregate report(s) of the project as a whole.  Also, to maximize project integrity, the intro and methods will be written and critiqued in advance of data collection.  Introductions can be just 1-2 paragraphs clarifying the main idea of the original study, the target finding for replication, and any other essential information.  It will NOT have a literature review -- that is in the original publication. You can write both the introduction and the methods in past tense.  
+
+##Experiment Summary:
+
+This experiment explores cooperation and the role of moral judgment in representing the self as a cooperative partner. To study this, Bourrat, Baumard, & McKay (2011) asked participants to read 2 vignettes that depicted individuals committing moral transgressions, and to rate these transgressions on a Likert scale where 1 was "morally unacceptable" and 7 was "morally acceptable." In the control condition, there was a picture of flowers between the vignette and the Likert scale; in the experimental condition, there was a picture of two eyes gazing at the participant. The eyes were meant to evoke the feeling of being watched (although the participants were always alone as they completed the study). 
+
+The researchers found a significant difference between conditions such that individuals in the experimental condition rated the moral transgressions as less acceptable than individuals in the control condition. This finding suggests that even a very subtle cue of being watched can cause people to make harsher moral judgments. I aim to replicate these findings.
+
+#Project Justification
+
+I am currently inexperienced in R and hope to develop my skills further by building a project from scratch. By collecting my own data and cleaning/tidying that data, as well as by analyzing a 2x2 experimental paradigm, I will be developing skills that will be of great use to me throughout grad school. Furthermore, I am interested in cooperation between individuals and the ways in which we portray ourselves as "cooperative", and am interested in whether this finding will replicate, thus suggesting that strong demonstrated morals are somehow demanded by social circumstances. 
+
+##Required Stimuli and Expected Procedure 
+
+This experiment will require no physical materials, given that the experiment will be entirely online via the MTurk online crowdsourcing platform (due to the in-person restrictions place on research by the COVID-19 pandemic, as well as time and resource constraints). While the original experiment took place in person, the participant was always alone during the study, thus justifying the use of MTurk since in-person experimenters were not necessary to carry out the study. 
+
+The physical materials used during the original study will thus be converted to a digital form for administration on Qualtrics via MTurk. The survey will consist of 2 pages, each with one moral vignette, a picture of eyes or flowers (depending on random condition assignment), and a Likert scale from 1-7 for rating of moral acceptability. 
+
+The original study was conducted with 91 volunteers from a Paris University, and participants were not compensated for their participation. Given MTurk participants are unlikely to complete an unpaid study, participants in the replication study will be paid a small fee for their time. 
+
+##Anticipated Challenges
+
+I anticipate that cleaning and tidying data from 91 participants will prove challenging, given that I have not worked with datasets in R in the past. In general, analyzing my own dataset for the first time combined with utilizing R to do so is a necessary challenge I will have to overcome to better develop both my R and data analysis chops.  
+
+##Related Links 
+
+The GitHub repository for this replication project can be found INSERT LINK
+
+The original paper and subject of the replication project can be found INSERT LINK
+
+##Methods
+
+###Power Analysis
+
+Original effect size, power analysis for samples to achieve 80%, 90%, 95% power to detect that effect size.  Considerations of feasibility for selecting planned sample size.
+
+###Planned Sample
+
+Planned sample size and/or termination rule, sampling frame, known demographics if any, preselection rules if any.
+
+###Materials
+
+All materials - can quote directly from original article - just put the text in quotations and note that this was followed precisely.  Or, quote directly and just point out exceptions to what was described in the original article.
+
+###Procedure	
+
+Can quote directly from original article - just put the text in quotations and note that this was followed precisely.  Or, quote directly and just point out exceptions to what was described in the original article.
+
+###Analysis Plan
+
+Can also quote directly, though it is less often spelled out effectively for an analysis strategy section.  The key is to report an analysis strategy that is as close to the original - data cleaning rules, data exclusion rules, covariates, etc. - as possible.  
+
+**Clarify key analysis of interest here**  You can also pre-specify additional analyses you plan to do.
+
+###Differences from Original Study
+
+Explicitly describe known differences in sample, setting, procedure, and analysis plan from original study.  The goal, of course, is to minimize those differences, but differences will inevitably occur.  Also, note whether such differences are anticipated to make a difference based on claims in the original article or subsequent published research on the conditions for obtaining the effect.
+
+### Methods Addendum (Post Data Collection)
+
+You can comment this section out prior to final report with data collection.
+
+#### Actual Sample
+  Sample size, demographics, data exclusions based on rules spelled out in analysis plan
+
+#### Differences from pre-data collection methods plan
+  Any differences from what was described as the original plan, or “none”.
+
+
+##Results
+
+
+### Data preparation
+
+Data preparation following the analysis plan.
+	
+```{r include=F}
+###Data Preparation
+
+####Load Relevant Libraries and Functions
+
+####Import data
+
+#### Data exclusion / filtering
+
+#### Prepare data for analysis - create columns etc.
+```
+
+### Confirmatory analysis
+
+The analyses as specified in the analysis plan.  
+
+*Side-by-side graph with original graph is ideal here*
+
+###Exploratory analyses
+
+Any follow-up analyses desired (not required).  
+
+## Discussion
+
+### Summary of Replication Attempt
+
+Open the discussion section with a paragraph summarizing the primary result from the confirmatory analysis and the assessment of whether it replicated, partially replicated, or failed to replicate the original result.  
+
+### Commentary
+
+Add open-ended commentary (if any) reflecting (a) insights from follow-up exploratory analysis, (b) assessment of the meaning of the replication (or not) - e.g., for a failure to replicate, are the differences between original and present study ones that definitely, plausibly, or are unlikely to have been moderators of the result, and (c) discussion of any objections or challenges raised by the current and original authors about the replication attempt.  None of these need to be long.
