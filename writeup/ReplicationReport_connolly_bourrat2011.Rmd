@@ -1,5 +1,5 @@
 ---
-title: "Replication of "Surveillance Cues Enhance Moral Condemnation" by Bourrat, Baumard, & McKay (2011, Evolutionary Psychology)"
+title: "Replication of Surveillance Cues Enhance Moral Condemnation by Bourrat, Baumard, & McKay (2011, Evolutionary Psychology)"
 author: "Catie Connolly (catiec@stanford.edu)"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output:
@@ -12,21 +12,19 @@ output:
 
 <!-- Replication reports should all use this template to standardize reporting across projects.  These reports will be public supplementary materials that accompany the summary report(s) of the aggregate results. -->
 
-##Introduction
+## Introduction 
 
-[No abstract is needed.]  Each replication project will have a straightforward, no frills report of the study and results.  These reports will be publicly available as supplementary material for the aggregate report(s) of the project as a whole.  Also, to maximize project integrity, the intro and methods will be written and critiqued in advance of data collection.  Introductions can be just 1-2 paragraphs clarifying the main idea of the original study, the target finding for replication, and any other essential information.  It will NOT have a literature review -- that is in the original publication. You can write both the introduction and the methods in past tense.  
-
-##Experiment Summary:
+### Experiment Summary
 
 This experiment explores cooperation and the role of moral judgment in representing the self as a cooperative partner. To study this, Bourrat, Baumard, & McKay (2011) asked participants to read 2 vignettes that depicted individuals committing moral transgressions, and to rate these transgressions on a Likert scale where 1 was "morally unacceptable" and 7 was "morally acceptable." In the control condition, there was a picture of flowers between the vignette and the Likert scale; in the experimental condition, there was a picture of two eyes gazing at the participant. The eyes were meant to evoke the feeling of being watched (although the participants were always alone as they completed the study). 
 
 The researchers found a significant difference between conditions such that individuals in the experimental condition rated the moral transgressions as less acceptable than individuals in the control condition. This finding suggests that even a very subtle cue of being watched can cause people to make harsher moral judgments. I aim to replicate these findings.
 
-#Project Justification
+### Project Justification
 
-I am currently inexperienced in R and hope to develop my skills further by building a project from scratch. By collecting my own data and cleaning/tidying that data, as well as by analyzing a 2x2 experimental paradigm, I will be developing skills that will be of great use to me throughout grad school. Furthermore, I am interested in cooperation between individuals and the ways in which we portray ourselves as "cooperative", and am interested in whether this finding will replicate, thus suggesting that strong demonstrated morals are somehow demanded by social circumstances. 
+I am currently inexperienced in R and hope to develop my skills further by building a project from scratch. By collecting my own data and cleaning/tidying that data, as well as by analyzing a 2x2 experimental paradigm, I will be developing skills that will be of great use to me throughout grad school. Furthermore, I am interested in cooperation between individuals and the ways in which we portray ourselves as "cooperative", and am interested in whether this finding will replicate, thus suggesting that strong demonstrated morals are somehow demanded by social circumstances. Furthermore, I hope to probe questions about how we define identity, and how identity can shift contextually according to the characteristics of a given situation. Thus, looking at a minimal paradigm like the one in this experiment, and the ways in which it may still impact moral judgments in meaningful ways, will be an exciting way to better understand how we conceptualize our identity in the real or imagined presence of others. 
 
-##Required Stimuli and Expected Procedure 
+### Required Stimuli and Expected Procedure 
 
 This experiment will require no physical materials, given that the experiment will be entirely online via the MTurk online crowdsourcing platform (due to the in-person restrictions place on research by the COVID-19 pandemic, as well as time and resource constraints). While the original experiment took place in person, the participant was always alone during the study, thus justifying the use of MTurk since in-person experimenters were not necessary to carry out the study. 
 
@@ -34,15 +32,17 @@ The physical materials used during the original study will thus be converted to 
 
 The original study was conducted with 91 volunteers from a Paris University, and participants were not compensated for their participation. Given MTurk participants are unlikely to complete an unpaid study, participants in the replication study will be paid a small fee for their time. 
 
-##Anticipated Challenges
+### Anticipated Challenges
 
 I anticipate that cleaning and tidying data from 91 participants will prove challenging, given that I have not worked with datasets in R in the past. In general, analyzing my own dataset for the first time combined with utilizing R to do so is a necessary challenge I will have to overcome to better develop both my R and data analysis chops.  
 
-##Related Links 
+### Related Links 
 
-The GitHub repository for this replication project can be found [here.] (https://github.com/psych251/bourrat2011)
+The GitHub repository for this replication project can be found [here.](https://github.com/psych251/bourrat2011)
 
-The original paper and subject of the replication project can be found [here.] (https://github.com/psych251/bourrat2011/blob/master/original_paper/bourrat2011.pdf)
+The original paper and subject of the replication project can be found [here.](https://github.com/psych251/bourrat2011/blob/master/original_paper/bourrat2011.pdf)
+
+<!-- This is the end of the introduction section. -->
 
 ##Methods
 

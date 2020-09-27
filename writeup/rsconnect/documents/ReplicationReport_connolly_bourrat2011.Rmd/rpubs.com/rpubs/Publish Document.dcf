@@ -1,0 +1,10 @@
+name: Publish Document
+title:
+username:
+account: rpubs
+server: rpubs.com
+hostUrl: rpubs.com
+appId: https://api.rpubs.com/api/v1/document/666992/5780a3e59cee49b3bbb7f6286fcc247f
+bundleId: https://api.rpubs.com/api/v1/document/666992/5780a3e59cee49b3bbb7f6286fcc247f
+url: http://rpubs.com/catiebooks/666992
+when: 1601239258.40254
