@@ -44,33 +44,51 @@ The original paper and subject of the replication project can be found [here.](h
 
 <!-- This is the end of the introduction section. -->
 
-##Methods
+## Methods
 
-###Power Analysis
+### Power Analysis
 
 Original effect size, power analysis for samples to achieve 80%, 90%, 95% power to detect that effect size.  Considerations of feasibility for selecting planned sample size.
 
-###Planned Sample
+### Planned Sample
 
-Planned sample size and/or termination rule, sampling frame, known demographics if any, preselection rules if any.
+I anticipate collecting data from approximately 91 mTurkers to match the original sample size. I will limit the sample to American mTurkers who are fluent in English in order to ensure that participants are able to complete the survey to the best of their ability. 
 
-###Materials
+### Materials
 
-All materials - can quote directly from original article - just put the text in quotations and note that this was followed precisely.  Or, quote directly and just point out exceptions to what was described in the original article.
+The original study used vignettes printed on A4 sheets of paper, with a picture of either eyes or flowers (depending on condition assignment) before a Likert scale. Given that the replication study will be conducted on Qualtrics via mTurk, the original stimuli will be presented in an online format, keeping all formatting equivalent to the greatest extent possible. 
 
-###Procedure	
+### Procedure	
 
-Can quote directly from original article - just put the text in quotations and note that this was followed precisely.  Or, quote directly and just point out exceptions to what was described in the original article.
+"Ninety-one participants were recruited in various libraries of the Campus Universitaire de Jussieu in Paris. Participation was voluntary and without remuneration. In an effort to minimize conscious concerns about the reputational consequences of their responses (which we felt might swamp the more subtle effects of our independent variable), we elected not to collect any personal (e.g., demographic) information from participants."
 
-###Analysis Plan
+Given that this replication study will be conducted over mTurk, we will instead sample from the available worker population. Additioanlly, the original stimuli were presented in French--because the current researcher is not familiar with French, the replication study will instead use a US population and present all stimuli in English. This study will also pay mTurkers a small fee for their time rather than avoid remuneration altogether. Finally, like the original study, we will avoid collecting demographic information so as to avoid activating identity-relevant concepts that may interfere with participant responses to the moral vignettes by invoking a sense of moral duty. 
 
-Can also quote directly, though it is less often spelled out effectively for an analysis strategy section.  The key is to report an analysis strategy that is as close to the original - data cleaning rules, data exclusion rules, covariates, etc. - as possible.  
+"Each participant was given two vignettes to read, printed on opposite sides of a single A4 sheet of paper. The vignettes were taken from Schnall, Haidt, Clore and Jordan (2008), and each described a moral violation: finding a wallet and keeping the money in one case, and falsifying a resume in the other (see the appendix for the original English versions, which were translated into French for the present study). Participants were instructed to rate the moral acceptability of each vignette on a nine-point Likert scale printed at the bottom of the page (1 = Morally unacceptable; 9 = Morally acceptable). Participants were directed to complete the task alone. The experimenter returned a few minutes later to collect the completed sheets."
 
-**Clarify key analysis of interest here**  You can also pre-specify additional analyses you plan to do.
+As stated above, the printed stimuli will instead be presented in an online survey format on Qualtrics via mTurk. Otherwise, the stimuli will be identical to those used in the original study. 
 
-###Differences from Original Study
+"Participants were assigned randomly to one of two conditions. In the eyes condition (n = 43) a 47 x 17 mm image of a pair of eyes (see Figure 1a) was displayed on each side of the sheet between the vignette and the associated Likert scale. In the flowers condition (n = 48) the image was of white flowers (see Figure 1b)."
 
-Explicitly describe known differences in sample, setting, procedure, and analysis plan from original study.  The goal, of course, is to minimize those differences, but differences will inevitably occur.  Also, note whether such differences are anticipated to make a difference based on claims in the original article or subsequent published research on the conditions for obtaining the effect.
+This aspect of the experiment will be carried out exactly as specified in the original paper. 
+
+### Analysis Plan
+
+"As the data were not normally distributed, we used a non-parametric test for our analyses. For the wallet vignette, the median rating of moral acceptability was 2 in the eyes condition and 3 in the flowers condition; the distributions in the two conditions were significantly different (Mann-Whitney U = 789, p = 0.024, one- tailed). For the resume vignette, the median rating was 3 in the eyes condition and 5 in the flowers condition; the distributions in the two conditions again differed significantly (Mann–Whitney U = 750, p = 0.016, one-tailed)."
+
+The above excerpt from the original paper specifies the data analysis strategy utilized. Assuming this replication project also produces data that is not normally distributed, I will use the Mann-Whitney U Test (Wilcoxon Rank Sum) to analyse whether the distributions of moral evaluations in the two conditions are statistically significant. 
+
+If, however, the data are normally distributed, I will instead use a t-test as the main analysis of interest. 
+
+Currently, there are no expectations that data will need to be excluded. In order to assess the question of interest (whether the condition of eyes or flowers impacts moral evaluations), data will be organized by vignette to best assess the impact of each condition on moral evaluation of each respective vignette. 
+
+### Differences from Original Study
+
+The most important differences between the original study and replication study are 1) the demographic characteristics of the sample, namely location and language, and 2) method of survey presentation. 
+
+Regarding 1), given the current researcher's knowledge base and lack of knowledge of French, this study will be conducted in English using a United States-based population. The original paper provided the English version of the vignettes, which will be used verbatim. Country of residence and ethnicity were not considered important factors in the original study, indicating that the orignally observed effect should generalize across populations. Similarly, it is important to note that the original study utilized convenience sampling amongst French university students, while the current study will more broadly sample from American mTurkers; again, this was not mentioned as specifically relevant in the original paper, and therefore we expect the original effects to persist in spite of this difference. 
+
+Regarding 2), the organization of this course as well as the current constraints on in-person studies due to the COVID-19 pandemic limit this study to online presentation only. Rather than distributing paper surveys, we will link mTurkers to a Qualtrics survey using the same design characteristics as the original study. Because the original study involved specifically leaving participants alone to fill out the study, there should be no issues presented by the lack of an in-person experimenter for this study. Additionally, because all stimuli was static in the original study, there is no reason to believe online presentation should alter the results. 
 
 ### Methods Addendum (Post Data Collection)
 
@@ -83,13 +101,15 @@ You can comment this section out prior to final report with data collection.
   Any differences from what was described as the original plan, or “none”.
 
 
-##Results
+## Results
 
 
 ### Data preparation
 
 Data preparation following the analysis plan.
 	
+I plan to organize the data by vignette in order to compare the effects of condition within each vignette. 
+
 ```{r include=F}
 ###Data Preparation
 
@@ -104,11 +124,11 @@ Data preparation following the analysis plan.
 
 ### Confirmatory analysis
 
-The analyses as specified in the analysis plan.  
+I will analyze the data, organized into the two vignettes and the two conditions within each vignette, using the Mann-Whitney U test to compare the impact of condition on moral evaluation of each respective vignette. 
 
 *Side-by-side graph with original graph is ideal here*
 
-###Exploratory analyses
+### Exploratory analyses
 
 Any follow-up analyses desired (not required).  
 
