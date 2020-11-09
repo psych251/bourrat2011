@@ -1,0 +1,5 @@
+StartDate,EndDate,Status,IPAddress,Progress,Duration (in seconds),Finished,RecordedDate,ResponseId,RecipientLastName,RecipientFirstName,RecipientEmail,ExternalReference,LocationLatitude,LocationLongitude,DistributionChannel,UserLanguage,Q1_1,Q2_1,Q8_1,Q9_1,mTurk,FL_11_DO,Q10,Q11,Q11_5_TEXT,Q12,Q12_7_TEXT
+11/8/20 13:48,11/8/20 13:50,IP Address,,100,120,TRUE,11/8/20 13:50,R_RrBqu9kjCjHN8TT,,,,,,,anonymous,EN,2,1,,,9612194,ControlBlock,35-44 years old,Male,,Other,asian/white/pacific islander
+11/8/20 13:50,11/8/20 13:51,IP Address,,100,94,TRUE,11/8/20 13:51,R_3KquAJeqAJy2241,,,,,,,anonymous,EN,6,4,,,26154562,ControlBlock,35-44 years old,Male,,White,
+11/8/20 14:06,11/8/20 14:07,IP Address,,100,53,TRUE,11/8/20 14:07,R_1FsnsKqC0MWYeQi,,,,,,,anonymous,EN,,,7,8,76916363,ExperimentalBlock,Over 55,Male,,White,
+11/8/20 18:39,11/8/20 18:40,IP Address,,100,72,TRUE,11/8/20 18:40,R_3hgNfzrASLDb7JG,,,,,,,anonymous,EN,,,1,2,89067614,ExperimentalBlock,25-34 years old,Female,,Black or African American,
