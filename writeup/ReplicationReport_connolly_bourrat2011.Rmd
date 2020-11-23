@@ -1,5 +1,6 @@
 ---
-title: "Replication of Surveillance Cues Enhance Moral Condemnation by Bourrat, Baumard, & McKay (2011, Evolutionary Psychology)"
+title: Replication of Surveillance Cues Enhance Moral Condemnation by Bourrat, Baumard,
+  & McKay (2011, Evolutionary Psychology)
 author: "Catie Connolly (catiec@stanford.edu)"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output:
@@ -7,7 +8,10 @@ output:
     toc: yes
     toc_depth: 3
     toc_float:
-      collapsed: false
+      collapsed: no
+  pdf_document:
+    toc: yes
+    toc_depth: '3'
 ---
 
 <!-- Replication reports should all use this template to standardize reporting across projects.  These reports will be public supplementary materials that accompany the summary report(s) of the aggregate results. -->
@@ -42,13 +46,17 @@ The GitHub repository for this replication project can be found [here.](https://
 
 The original paper and subject of the replication project can be found [here.](https://github.com/psych251/bourrat2011/blob/master/original_paper/bourrat2011.pdf)
 
+The preregistration for this replication project can be found [here.](https://osf.io/rhfzg)
+
 <!-- This is the end of the introduction section. -->
 
 ## Methods
 
 ### Power Analysis
 
-Original effect size, power analysis for samples to achieve 80%, 90%, 95% power to detect that effect size.  Considerations of feasibility for selecting planned sample size.
+The original effect size of the Mann Whitney U test used (the key statistic for this replication study) was d = 0.78, or f = 0.39 (calculated independently, given that it was not provided by the authors in the original paper). In order to achieve 80% power, 46 participants are needed. 
+
+Given that the study is very short and hence will not be expensive to run on MTurk, and concerns regarding the differences between the original and current replication study (the online format, population, etc.) I plan to use the original sample size to match the original experiment as closely as possible. 
 
 ### Planned Sample
 
@@ -92,17 +100,27 @@ Regarding 2), the organization of this course as well as the current constraints
 
 ### Methods Addendum (Post Data Collection)
 
-You can comment this section out prior to final report with data collection.
-
 #### Actual Sample
-  Sample size, demographics, data exclusions based on rules spelled out in analysis plan
+
+We collected data from 90 participants (45 participants in each of the two conditions).
+
+The study was conducted with a US-based and English-speaking population. 
+
+66 participants were male (73% of total sample) and 23 participants were female (25% of total sample). 1 participant identified as non-binary (1% of total sample). 
+
+Regarding the age breakdown of the subjects, 5% of participants were 18-24 years old, 40% of participants were 25-34 years old, 33.3% of participants were 35-44 years old, 10% of participants were 45-54 years old, and 10% of participants were over 55. 
+
+In terms of racial identity, 71% of participants identified as White, 10% of participants identified as Black or African American, 6.6% of participants identified as Hispanic or Latino, 8.8% of participants identified as Asian, and 1% of participants identified as Native American or American Indian. 
+
+We did not exclude any data, given that the study was very short and it would be difficult to accurately weed out inattentive participants based on time spent taking the survey. 
+
+We did, however, set some important standards for participation in this study beforehand: partcipants needed to have a prior approval rating of 95% or greater, and participants needed to be English-speaking and located in the US. 
 
 #### Differences from pre-data collection methods plan
-  Any differences from what was described as the original plan, or “none”.
 
+None.
 
 ## Results
-
 
 ### Data preparation
 
@@ -110,62 +128,108 @@ Data preparation following the analysis plan.
 	
 I plan to organize the data by vignette in order to compare the effects of condition within each vignette. 
 
-```{r include=F}
-###Data Preparation
+```{r}
+#Import Data 
 
-####Load Relevant Libraries and Functions
+library(readr)
+mydata <- read_csv("https://raw.githubusercontent.com/psych251/bourrat2011/master/Bourrat%202011%20replication_finaldata.csv?token=ARBJXF4XMIPF6W2P6YE5XX27XQPG2")
 
-####Import data
-
-#### Data exclusion / filtering
-
-#### Prepare data for analysis - create columns etc.
-
-mydata <- read.csv("Desktop/bourrat_pilot.csv")
-
+# Load libraries
 library(foreign) # for reading spss formatted data
 library(tidyr)
 library(dplyr)
 library(stringr) # useful for some string manipulation
 library(ggplot2)
+library(knitr)
 
-## mydata %>%
- ## select(StartDate, EndDate, Status, IPAddress, Progress, Duration, Finished, Recorded Date, ResponseId, RecipientLastName, RecipientFirstName, RecipientEmail, ExternalReference, LocationLatitude, LocationLongitude, DistributionChannel, UserLanguage) %>%
-##  mutate() 
-## trying to delete columns i dont need but cant figure it out
-
-mydata %>%
-  rename(
-    FL_11_DO = Condition,
-    Wallet_control = Q1_1
-    Resume_control = Q2_1
-    Wallet_experimental = Q8_1
-    Resume_experimental = Q9_1
-  )
-
+# Rename data
 names(mydata) <- sub("^FL_11_DO$", "condition", names(mydata))
 names(mydata) <- sub("^Q1_1$", "wallet_control", names(mydata))
 names(mydata) <- sub("^Q2_1$", "resume_control", names(mydata))
 names(mydata) <- sub("^Q8_1$", "wallet_experimental", names(mydata))
 names(mydata) <- sub("^Q9_1$", "resume_experimental", names(mydata))
 
+# Read column names 
 colnames(mydata)
 
-mydata %>% select(wallet_control:condition)
-
-wilcox.test(wallet_control, wallet_experimental = NULL) #not sure how to execute this
-wilcox.test(resume_control, resume_experimental = NULL)
-
-## not finished - struggling with figuring out how to organize the data to do the analysis
 ```
+
 
 ### Confirmatory analysis
 
-I will analyze the data, organized into the two vignettes and the two conditions within each vignette, using the Mann-Whitney U test to compare the impact of condition on moral evaluation of each respective vignette. 
+First, I will present the data in histograms by vignette to provide a visualization of the data collected for this replication study. 
 
-*Side-by-side graph with original graph is ideal here*
+I will then analyze the data, organized into the two vignettes and the two conditions within each vignette, using the one-tailed Mann-Whitney U test to compare the impact of condition on moral evaluation of each respective vignette. 
 
-### piExploratory analyses
+I will also produce graphs comparing the mean moral acceptability ratings within each vignette (wallet versus resume), grouped by condition (control versus experimental). 
+
+
+```{r}
+#Plot Data
+#Histogram - counts 
+
+ggplot(mydata, aes(x = wallet)) + 
+  geom_histogram(
+    binwidth = 1,
+    center = 1,
+  ) +
+  facet_wrap(~condition) +
+  scale_x_continuous(
+    breaks=seq(1,10,1)
+  )
+
+ggplot(mydata, aes(x = resume)) + 
+  geom_histogram(
+    binwidth = 1,
+    center = 1,
+  ) +
+  facet_wrap(~condition) +
+  scale_x_continuous(
+    breaks=seq(1,10,1)
+  )
+
+#Main statistical test - Wilcoxon 
+
+mydata %>% select(wallet_control:condition) 
+
+testdata <- as.data.frame(apply(mydata[,18:21], MARGIN=2, FUN=as.integer))
+
+wilcox.test(x=testdata$wallet_control, y=testdata$wallet_experimental, alternative=c("greater"), na.rm = TRUE)
+wilcox.test(x=testdata$resume_control, y=testdata$resume_experimental, alternative=c("greater"), na.rm = TRUE)
+
+# Mean Moral Acceptability Plots
+# Original plot of mean moral acceptability from Bourrat 2011
+  
+knitr::include_graphics("https://github.com/psych251/bourrat2011/blob/master/images/bourrat2011_mainplot.png?raw=true")
+
+#Replication plot of means 
+
+test <- mydata %>% 
+  select(c("condition", "resume", "wallet")) %>% #select relevant variables 
+  pivot_longer(cols=c("resume", "wallet"), names_to="vignette", values_to="result") #organize data for plot
+
+test$vignette = factor(test$vignette, levels=c("wallet", "resume"), ordered=TRUE) #create vignette factors, order presentation of vignettes
+test$condition = factor(test$condition, levels=c("ExperimentalBlock","ControlBlock"), ordered=TRUE) #create condition factor, order presentation of conditions
+
+# Produce means plot
+test %>% 
+  group_by(condition, vignette) %>% 
+  summarize(mean=mean(result), se=sd(result)/sqrt(n())) %>% #Produce means and error bars
+  ggplot(aes(x=vignette, y=mean, fill=condition)) + #Fill by condition
+  geom_bar(stat="identity", position="dodge") + 
+  geom_errorbar(position=position_dodge(0.9),
+                width= .5, 
+                aes(ymin=mean-se,
+                    ymax=mean+se)) +
+  ylim(0,6) + 
+  scale_fill_manual(values=c("plum3", "plum4")) +
+  ggtitle("Replication Study: Mean Moral Acceptability by Vignette")
+
+
+```
+
+
+### Exploratory analyses
 
 Any follow-up analyses desired (not required).  
 
@@ -173,8 +237,16 @@ Any follow-up analyses desired (not required).
 
 ### Summary of Replication Attempt
 
-Open the discussion section with a paragraph summarizing the primary result from the confirmatory analysis and the assessment of whether it replicated, partially replicated, or failed to replicate the original result.  
+The primary result was the Mann-Whitney U test. The test was one-tailed and assessed whether the moral acceptability ratings were lower in the experimental condition than in the control condition (implying people were more morally condemning when they saw surveillance cues). For the wallet vignette, we found a U of 1051.5 with a p-value of 0.3757. For the resume vignette, we found a U of 903.5 with a p-value of 0.8141. In the original study, the authors found a U of 789 with a p-value of 0.024 for the wallet vignette, and a U of 750 with a p-value of 0.016 for the resume vignette. 
+
+We failed to replicate the original findings, with non-significant results indicating that moral acceptability scores in the experimental conditions were no lower than moral acceptability scores in the control conditions for both vignettes. Regarding the resume vignette, the data actually seems to be trending in the opposite direction from the original findings, suggesting that participants in the experimental condition may have found that vignette more morally acceptable relative to participants in the control condition. 
 
 ### Commentary
 
-Add open-ended commentary (if any) reflecting (a) insights from follow-up exploratory analysis, (b) assessment of the meaning of the replication (or not) - e.g., for a failure to replicate, are the differences between original and present study ones that definitely, plausibly, or are unlikely to have been moderators of the result, and (c) discussion of any objections or challenges raised by the current and original authors about the replication attempt.  None of these need to be long.
+No exploratory analyses were conducted due to lack of sufficient time to carry them out. 
+
+One key difference between the original study and the replication study was the mode of presentation. While the original study was conducted in-person using a double-sided paper survey, the current replication study was conducted on MTurk via Qualtrics. While all efforts were made to make the presentation otherwise identical, and confirmation was received from the original paper authors confirming that the stimuli used for the replication were very similar to those which were used in the original study, it is possible that the environment in which the study was conducted affected results. Given the importance of the idea of "surveillance cues" to the study, these results may call into question whether these sorts of cues are only effective in specific environments. The eyes are, as the original authors would argue, a mechanism that causes the participant to feel as though they are being watched, perhaps activating an evolutionary mechanism sensitive to surveillance and social cues. The original study, conducted in a public location, might have more effectively activated this cue. On the other hand, our remote study conducted via the internet might be less effective in activating this cue. If a person is aware that they are alone and simply operating their computer, they may not be sensitive to cues that indicate social surveillance. 
+
+Furthermore, it is also possible that the means of collecting data affected partcipants' approach to the experiment. While in the original study participants interfaced directly with the researchers before completing the survey, our participants had the far more socially-distant experience of completing the survey based off a posted link, with no real interaction with the researchers. It's possible that, to some extent, the in-person interfacing helped to facilitate the surveillance effect, such that the effect would not be observable in a setting where researchers are not physically present. 
+
+The original experiment was also conducted with a French and French-speaking population, whilst the replication was conducted with an American and English-speaking population. Although possible, it is unlikely that these differences in results were due to a cultural or language-related difference in populations, particularly considering the extent to which the results failed to replicate. Furthermore, given that the original author provided written confirmation that the presentation of the stimuli matched (in online format) the original study materials, it seems unlikely that translation would be the difference driving the lack of replication. 
